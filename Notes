@@ -1,0 +1,7 @@
+RAG stands for Retrieval Augmented Generation. It is a new NLP architecture that leverages external documents (like Wikipedia) to augment its knowledge and achieve state of the art results on knowledge-intensive tasks.
+
+Some examples of knowledge-intensive tasks are fact-checking, open-domain question answering, slot filling, entity linking, and dialog. These are tasks that require AI models to use real-world knowledge from external sources (like Wikipedia) to generate correct and relevant answers.
+
+RAG is a seq2seq model which encapsulates two core components: a question encoder and a generator. During a forward pass, we encode the input with the question encoder and pass it to the retriever to extract relevant context documents. The documents are then prepended to the input. Such contextualized inputs is passed to the generator.
+
+The question encoder can be any autoencoding model, preferably DPRQuestionEncoder, and the generator can be any seq2seq model, preferably BartForConditionalGeneration.
